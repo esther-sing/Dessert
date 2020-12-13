@@ -1,0 +1,1310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+    <script src="http://code.jquery.com/jquery.min.js"></script>
+    <link rel="stylesheet" href="./css/vegas.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet"  href="./bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+
+</head>
+<style>
+            @keyframes move {
+            0% {
+                /* background: cadetblue; */
+            }
+
+            50% {
+                /* background: rgb(233, 155, 92); */
+
+                /* background: rgb(122, 145, 187); */
+                transform: translateY(10px) translateX(-5px) rotate(30deg);
+
+            }
+
+            100% {
+                /* background: rgb(231, 166, 204); */
+                /* background: rgb(218, 216, 118); */
+
+
+            }
+        }
+        @keyframes move1 {
+            0% {
+                /* background: cadetblue; */
+                transform:rotate(0deg);
+
+            }
+
+            50% {
+                /* background: rgb(233, 155, 92); */
+
+                /* background: rgb(122, 145, 187); */
+                transform: rotate(-30deg);
+
+            }
+
+            100% {
+                /* background: rgb(231, 166, 204); */
+                transform: rotate(0deg);
+
+                /* background: rgb(218, 216, 118); */
+
+
+            }
+        }
+
+    @font-face {
+    font-family: YuMin;
+    src: local(YuMin-Medium),
+        url(/path/to/YuMin-Medium.woff2) format("woff2"),
+        url(/path/to/YuMin-Medium.woff) format("woff"),
+        url(/path/to/YuMin-Medium.ttf) format("truetype");
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    }
+    @font-face {
+    font-family: BodoniSvtyTwoITCTT;
+    src: local(BodoniSvtyTwoITCTT-Book),
+        url(/path/to/BodoniSvtyTwoITCTT-Book.woff2) format("woff2"),
+        url(/path/to/BodoniSvtyTwoITCTT-Book.woff) format("woff"),
+        url(/path/to/BodoniSvtyTwoITCTT-Book.ttf) format("truetype");
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    }
+    @font-face {
+    font-family: NotoSans;
+    src: local(NotoSans-Regular),
+        url(/path/to/NotoSans-Regular.woff2) format("woff2"),
+        url(/path/to/NotoSans-Regular.woff) format("woff"),
+        url(/path/to/NotoSans-Regular.ttf) format("truetype");
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    }
+    body{
+        margin: 0;
+    }
+    a:hover{
+        text-decoration: none;
+    }
+    #h-pic{
+        /* max-width: 1920px; */
+        height: 100vh;
+    }
+    .webNav{
+        margin: 0 auto;
+        background-color: #ffffff00;
+        top: 0;
+        z-index: 99;
+        position: fixed;
+        width: 100%;
+        transition: .8s;
+
+    }
+    .webNav.hideNav {
+            transform: translateY(-202px);
+            background: transparent;
+
+        }
+    .phongNav{
+        display: none;
+    }
+    .nav{
+        padding: 48px 0 48px 105px;
+        list-style: none;
+        display: flex;
+    }
+    a{
+        text-decoration: none;
+    }
+    .nav li{
+        /* padding: 0 40px; */
+        margin: 0 40px;
+        color: #6e552f;
+        font-family: NotoSans;
+        font-size: 16px;
+        letter-spacing: 0.32px;
+        word-break:normal;
+        border-bottom: 1px solid transparent;
+    }
+
+    .nav li:hover{
+        color: #e2be9b;
+        border-bottom: 1px solid #e2be9b;
+        transition: .5s;
+        transform: scale(1.2, 1.2);
+
+    }
+    .title{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items:flex-end;
+        margin-top: 65vh;
+        margin-right: 5vw;
+        
+    }
+    .title .title-1{
+        text-align: center;
+    }
+
+    
+    h1{
+        font-size: 72px;
+        /* font-family: 'Noto Serif JP', serif; */
+        color: #6e552f;
+        letter-spacing: 5.76px;
+        line-height: 1.2;
+        margin: 0;
+        font-family: YuMin;
+        font-weight: 500;
+        
+    }
+
+ 
+    h6{
+        letter-spacing: 3.4px;
+        color: #707070;
+        font-family: BodoniSvtyTwoITCTT;
+        font-size: 17px;
+        margin: 0;
+        opacity: 0.26;
+        line-height: 1.21;
+    }
+    .ind-button{
+        list-style: none;
+        display: flex;
+        padding: 0;
+        margin: 0;
+        margin-top: -5px;
+    }
+    .ind-button a{
+        text-decoration: none;
+        font-size: 11px;
+        letter-spacing: 1.1px;
+    }
+    .btn1{
+        width: 162.5px;
+        height: 25.5px;
+        border:  #e2be9b;
+        background-color: #e2be9b;
+        color: #ffffff;
+        outline: #c19d56 solid 0.5px;
+        border: solid 0.5px transparent;
+        outline-offset: 3.5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin:30px 15px;
+        font-size: 11px;
+        letter-spacing: 1.1px;
+    }
+    .btn1:hover{
+        background-color: #6e552f;
+        color: #ffffff;
+        outline: #6e552f solid 0.5px;
+        transition: .5s;
+        box-shadow:10px 10px 10px #473b2f80  ;
+    }
+    .btn2{
+        width: 162.5px;
+        height: 25.5px;
+        border:  #e2be9b;
+        /* background-color: #e2be9b; */
+        border: solid 0.5px #6e552f;
+        color: #6e552f;
+        outline: #6e552f solid 0.5px;
+        outline-offset: 3.5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin:30px 15px;
+    }
+    .btn2:hover{
+        background-color: #6e552f;
+        color: #ffffff;
+        outline: #6e552f solid 0.5px;
+        transition: .5s;
+        box-shadow:10px 10px 10px #473b2f80  ;
+
+    }
+
+
+/* scroll------------------------------ */
+    #mouse-scroll {
+    position: absolute;
+    margin: auto;
+    left: 50%;
+    bottom: 30px;
+    -webkit-transform: translateX(-50%);
+    z-index: 9999;
+}
+#mouse-scroll .mouse {
+    height: 40px;
+    width: 30px;
+    border-radius: 15px;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    border: 1px solid #ffffff;
+    top: 170px;
+}
+#mouse-scroll .mouse-in {
+    height: 5px;
+    width: 2px;
+    display: block;
+    margin: 5px auto;
+    background: #ffffff;
+    position: relative;
+    -webkit-animation: animated-mouse 1.2s ease infinite;
+}
+#mouse-scroll .down-arrow-1, 
+#mouse-scroll .down-arrow-2, 
+#mouse-scroll .down-arrow-3 {
+     -webkit-animation: mouse-scroll 1s infinite;
+    -moz-animation: mouse-scroll 1s infinite;
+}
+#mouse-scroll .down-arrow-1 {
+    margin-top: 6px;
+}
+#mouse-scroll .down-arrow-2 {
+    -webkit-animation-delay: .2s;
+    -moz-animation-delay: .2s;
+    -webkit-animation-direction: alternate;
+}
+#mouse-scroll .down-arrow-3 {
+    -webkit-animation-delay: .3s;
+    -moz-animation-dekay: .3s;
+    -webkit-animation-direction: alternate;
+}
+#mouse-scroll span {
+    display: block;
+    width: 10px;
+    height: 10px;
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    transform: rotate(45deg);
+    border-right: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    margin: 0 0 2px 12.5px;
+}
+
+
+@-webkit-keyframes animated-mouse {
+    0% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+        transform: translateY(0);
+    }
+    100% {
+         opacity: 0;
+        -webkit-transform: translateY(6px);
+        -ms-transform: translateY(6px);
+        transform: translateY(6px);
+    }
+}
+
+@-webkit-keyframes mouse-scroll {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: .5;
+    }
+    100% {
+        opacity: 1;
+    } 
+}
+@keyframes mouse-scroll {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* dailyOffer------------------------------ */
+
+.dailyOffer{
+    /* background: url(/images/dailyOffer-1.jpg); */
+    /* width:100%; */
+    position: relative;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+.dailyOffer .world{
+    left: 10%;
+    top:20%;
+    position: absolute;
+
+}
+
+.dailyOffer h4{
+    color: #bea994;
+    letter-spacing: 4.6px;
+    font-size: 46px;
+    font-family: NotoSans;
+    font-weight: 100;
+    margin: 0;
+}
+.dailyOffer ul{
+    list-style: none;
+    color: #f5d28a;
+    font-family: NotoSans;
+    font-size: 30px;
+    letter-spacing: 3px;
+    padding: 0;
+    margin: 0;
+}
+.dailyOffer .letter{
+    font-family: NotoSans;
+    color: #707070;
+    font-size: 12.5px;
+    letter-spacing: 1.25px;
+    width: 300px;
+    margin: 5px 0;
+    line-height: 20px;
+}
+.view{
+    margin:30px  0 ;
+}
+.dailyOffer .figur{
+    /* width: 100vw; */
+    height: 70vh;
+    margin: 0;
+}
+.dailyOffer .figur img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/*circle ------------------------- */
+
+.circle {
+    display: flex;
+    justify-content: center;
+    margin: 60px 0;
+}
+.circle1{
+    padding: 0 3%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.circle1 ul{
+    list-style: none;
+    padding: 0;
+    /* width: 20vw;
+    height: 20vw; */
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+}
+.circle-1 ul{
+    background:url(./images/circle-1-1.png) 50% 50%;
+}
+.circle-1 ul:hover{
+    background:url(./images/circle-1.png) center center;
+    transition: .8s;
+}
+.circle-1 ul:hover li{
+    color: transparent;
+    transition: .5s;
+}
+/* .circle-1 ul:hover .title1 ,.circle-1 ul:hover .world-1{
+   display: none;
+   transition: .5s;
+} */
+
+.circle-2 ul{
+    background:url(./images/circle-2-1.png) 50% 50%;
+}
+.circle-2 ul:hover{
+    background:url(./images/circle-2.png) center center;
+    transition: .8s;
+}
+.circle-2 ul:hover li{
+    color: transparent;
+    transition: .5s;
+}
+
+.circle-3 ul{
+    background:url(./images/circle-3-1.png) 50% 50%;
+}
+.circle-3 ul:hover{
+    background:url(./images/circle-3.png) center center;
+    transition: .8s;
+}
+.circle-3 ul:hover li{
+    color: transparent;
+    transition: .5s;
+}
+
+
+
+.title1{
+    font-size: 25px;
+    color: #6e552f;
+    letter-spacing: 2.5px;
+    text-align: center;
+    padding-top: 80px;
+}
+.world-1{
+    width: 200px;
+    color: #6e552f;
+    font-family: NotoSans;
+    letter-spacing: 1px;
+    font-size: 10px;
+    margin: 0 auto;
+    padding-top: 17px;
+}
+
+/* orange------------ */
+.orange{
+    background: url(./images/orange.png);
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    /* display: table; */
+    background-attachment: fixed;
+    background-position: center top;
+    display: flex;
+}
+.line{
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    border: #ffffff 4px dashed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    transition: .8s;
+    animation-name: move;
+    font-family: Arial, Helvetica, sans-serif;
+    /* animation-name: boxmove; */
+            animation-duration: 5s;
+            animation-direction:alternate;
+            animation-fill-mode: both;
+            animation-iteration-count: infinite;
+            /* flex-direction: column; */
+
+}
+.orange ul{
+    list-style: none;
+    padding: 0;
+    width: 330px;
+    height: 330px;
+    background-color: #f5d28a;
+    border-radius: 50%;
+    border: #ffffff 3px solid;
+    /* outline: #ffffff dotted 5px ; */
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: .8s;
+    animation-name: move1;
+    font-family: Arial, Helvetica, sans-serif;
+    /* animation-name: boxmove; */
+            animation-duration: 5s;
+            animation-direction:alternate;
+            animation-fill-mode: both;
+            animation-iteration-count: infinite;
+            /* flex-direction: column; */
+}
+.titleO{
+    color: #ffffff;
+    font-size: 28px;
+    letter-spacing: 0.5px;
+    /* margin: 5px 0; */
+    font-weight: 600;
+    margin-top: 15px;
+}
+.orange .time{
+    color: #6e552f;
+    letter-spacing: 1px;
+    font-size: 12px;
+    margin: 5px 0 15px 0;
+}
+.viewO{
+    background-color: #ffff;
+    outline: #ffff solid 0.5px;
+    color: #f5d28a;
+    margin: 0;
+}
+/* popular-------------- */
+.popular{
+    /* height: 100vh; */
+}
+.popular ul{
+    height: 400px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    /* flex-direction: row-reverse;
+    align-items: flex-end; */
+    position: relative;
+    align-items: center;
+}
+.popular ul .grass{
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.popular ul .grass img{
+    width: 100%;
+    height: 100%;
+
+}
+.popular ul .worldP{
+
+    margin: 0 auto;
+    width: 715px;
+    /* position: absolute; */
+    z-index: 1;
+    /* top: 18vh; */
+
+}
+.popular ul li h3{
+    font-size: 35px;
+    color: #6e552f;
+    letter-spacing: 3.5px;
+    font-weight: 400;
+    text-align: center;
+    margin: 25px 0;
+}
+.popular ul li span{
+    letter-spacing: 1.25px;
+    color:#6e552f;
+}
+
+.popular ul .lemon{
+    width: 350px;
+    height: 250px;
+    overflow: hidden;
+    position: absolute;
+    bottom: 0;
+}
+.popular ul .lemon img{
+    width: 100%;
+    height: 100%;
+}
+.popular .card-g{
+    max-width: 1300px;
+    margin: 30px auto;
+}
+.popular .card{
+    border: 0;
+}
+.popular .card-g .card .card-body{
+    padding: 1.25rem 0;
+    /* width: 15rem; */
+    margin: auto;
+}
+.popular .card .card-title{
+    color: #6e552f;
+    font-family: NotoSan;
+    font-weight: 400;
+    letter-spacing: 1.5px;
+    text-align: center;
+    
+}
+.popular .card .card-text{
+    color: #6e552f;
+    font-family: NotoSan;
+    font-weight: 400;
+    font-size: 10px;
+    letter-spacing: 1px;
+
+}
+.popular .card .view{
+    margin: 30px auto;
+}
+
+
+/* square-------------------- */
+.square ul {
+    list-style: none;
+    padding: 0;
+    /* margin: 0; */
+    /* max-width: 1100px; */
+    margin: 30px auto;
+}
+.square ul li{
+    /* max-width: 60vh; */
+    max-height: 60vh;
+    padding: 0;
+}
+.square ul li img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.square ul li img:hover{
+    opacity: .6;
+    transition: .8s;
+    
+}
+
+/* visit-------------- */
+.visit{
+    position: relative;
+    height: 83vh;
+    background: url(./images/visitbg.svg);
+}
+.visit .visitUs{
+    position: absolute;
+    /* max-width: 500px; */
+    background-color: #ffffff80;
+    border: transparent 2px solid;
+    outline:  #ffffff80 solid 0.5px;
+    outline-offset: 15px;
+    left: 10%;
+    top: 20%;
+    max-width: 82%;
+    
+
+}
+.visit .visitUs h4{
+    color: #8d7045;
+    letter-spacing: 4.6px;
+    font-size: 46px;
+    font-family: NotoSans;
+    font-weight: 400;
+    margin: 30px;
+}
+.visit .visitUs .word{
+    color: #6e552f;
+    font-family: NotoSans;
+    letter-spacing: 1.5px;
+    /* max-width: 500px; */
+    max-width: 76%;
+    line-height: 30px;
+    margin: 30px;
+}
+.visit .visitUs .visbtn{    
+    margin: 30px 0 30px 0;
+    display: flex;
+    right: -55%;
+    /* top: 0; */
+    bottom: 10%;
+    position: relative;}
+
+.visit .visitbg{
+    /* width: 100vw; */
+    height: 65vh;
+    margin: 0;
+}
+.visit .visitbg img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/* top------------- */
+.top {
+    position: fixed;
+    bottom: 50px;
+    right: 60px;
+    transition: .1s;
+    z-index: 999;
+    background-color: #ffffff21;
+    padding: 0 2px;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 2.5px;
+    display: none;
+  }
+  .top img{
+      width: 100%;
+      height: 100%;
+  }
+  .top:hover{
+      transform: scale(1.1);
+      cursor: pointer;
+      /* box-shadow: 0 6px 20px #b696563b; */
+    background-color: #ffffff62;
+
+
+  }
+
+@media screen and (max-width: 1200px){
+    .circle1{
+        padding: 0 2%;
+    }
+    .circle1 ul{
+        width: 280px;
+        height: 280px;
+    }
+}
+@media screen and (max-width:1028px){
+    .popular .card .card-title{
+    font-size: 18px;
+    letter-spacing: 0;
+    font-weight: 500;
+}
+}
+@media screen and (max-width: 992px){
+   
+  
+  .circle1{
+    padding: 0 2%;
+  }
+  .circle1 ul{
+    margin-bottom: 20px;
+    width: 250px;
+    height: 250px;
+  }
+  .title1{
+      padding-top: 70px;
+  }
+}
+@media screen and (max-width: 850px){
+   
+  
+   .circle1{
+     padding: 0 1%;
+   }
+   .circle1 ul{
+     margin-bottom: 20px;
+     width: 240px;
+     height: 240px;
+   }
+   .title1{
+       padding-top: 70px;
+   }
+ }
+
+@media screen and (max-width: 768px){
+    .webNav{
+        display: none;
+    }
+
+    /* phone nav */
+ 
+    .transition {
+            transition: 0.4s;
+        }
+      .phongNav{
+        display: flex;
+        padding: 15px 25px;
+        position: fixed;
+        z-index: 99;
+        transition: .8s;
+        top: 0;
+        left: 75%;
+        /* right: 0; */
+        margin: 0 auto;
+        width: 100%;
+        background-color: #ffffff00;
+
+      }
+      .phongNav.hideNav {
+            transform: translateY(-202px);
+            background: transparent;
+
+        }
+      .menu2-1 {
+            display: inline-block;
+            cursor: pointer;
+            padding: 0 0 0 2px;
+        }
+
+        ul,
+        li {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            z-index: 3;
+        }
+
+        .bar {
+            width: 45px;
+            height: 1px;
+            background: #e2be9b;
+            margin: 10px 0;
+            border-radius: 2px;
+        }
+
+        .active .bar1 {
+            -webkit-transform: rotate(-40deg) translate(-9px, 7px);
+            transform: rotate(-40deg) translate(-9px, 7px);
+        }
+
+        .active .bar2 {
+            opacity: 0;
+        }
+
+        .active .bar3 {
+            -webkit-transform: rotate(40deg) translate(-9px, -8px);
+            transform: rotate(40deg) translate(-9px, -8px);
+        }
+
+        /* .menu-bg{
+            display: block;
+            background-color: rgba(255, 255, 255, 0.466);
+            width: 100vw;
+            height: 414px;
+            margin-left: -309px;
+        } */
+
+        .menu2-1.active ul {
+            opacity: 1;
+            max-height: 300px;
+            margin-left: -313px;
+            margin-top: 12px;
+            width: 275px;
+            background-color: #ffffff85;
+            padding: 0 55px 36px 55px;
+        }
+
+        .menu2-1 ul {
+            background:#FCFAF2;
+            position: absolute;
+            transition: .4s;
+            opacity: 0;
+            overflow: hidden;
+            max-height: 0;
+        }
+
+        .menu2-1 ul li a {
+            display: block;
+            padding: 25.5px 10px;
+            text-decoration: none;
+            color: #6E552F;
+            letter-spacing: 2px;
+            border-bottom: 1px solid #E2BE9B;
+
+        }
+    /* .circle1{
+    padding: 0 1%;
+  }
+  .circle1 ul{
+    margin-bottom: 20px;
+    width: 250px;
+    height: 250px;
+  }
+  .title1{
+      padding-top: 70px;
+  } */
+  .circle{
+      flex-direction: column;
+  }
+  
+  .circle1{
+      padding-top: 40px;
+  }
+  .circle1 ul{
+      width: 300px;
+      height: 300px;
+    margin-bottom: 20px;
+  }
+  .title1{
+      font-size: 30px;
+  }
+  .world-1{
+      font-size: 14px;
+  }
+}
+@media screen and (max-width: 576px) {
+    
+
+    .title{
+        margin-top: 62vh;
+        /* margin-right: 5vw; */
+        
+    }
+    h6{
+        margin-bottom: 5px;
+    }
+    .ind-button{
+        flex-direction: column;
+        align-items: center;
+        margin-top: -5px;
+    }
+    .btn1{
+        width: 200px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin:15px 0 5px 0;
+    }
+    .btn2{
+        width: 200px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin:15px 0;
+        
+    }
+    #mouse-scroll{
+      display: none;
+  }
+/* circle------------ */
+  /* .circle{
+      flex-direction: column;
+  }
+  
+  .circle1{
+      padding-top: 40px;
+  }
+  .circle1 ul{
+    margin-bottom: 20px;
+  } */
+  
+  /* .title1{
+      font-size: 30px;
+  }
+  .world-1{
+      font-size: 14px;
+  } */
+  .line{
+      animation-name: none;
+  }
+  .orange ul{
+      animation-name: none;
+  }
+
+/* popular-------------- */
+.popular ul .grass{
+    width: 120px;
+    height: 160px;
+}
+.popular ul li h3 {
+    font-size: 24px;
+}
+.popular ul li span{
+
+    font-size: 10px;
+    margin: 0 auto;
+    width: 300px;
+    display: flex;
+    line-height: 24px;
+}
+.popular ul .lemon {
+    width: 180px;
+    height: 120px;
+}
+
+
+.popular .card .card-title{
+    font-size: 15px;
+    letter-spacing: 0;
+    font-weight: 500;
+}
+
+.popular .card .view{
+    /* margin: 30px auto; */
+    width: 150px;
+}
+.visit .visitUs{
+    top:10%;
+}
+.visit .visitUs .visbtn {
+    right: -26%;
+}
+  }
+
+</style>
+<body>
+    <nav class="webNav" id="webNav">
+        <ul class="nav">
+            <a href=""><li class="home">HOME</li></a>
+            <a href="#dailyOffer"><li>NEWS</li></a>
+            <a href=""><li>PRODUCTS</li></a>
+            <a href=""><li>ABOUT US</li></a>
+        </ul>
+    </nav>
+    <nav class="phongNav" id="phongNav">
+            <div class="menu2-1">
+                <div class="bar bar1 transition"></div>
+                <div class="bar bar2 transition"></div>
+                <div class="bar bar3 transition"></div>
+                    <ul>
+                        <li><a href="">HOME</a></li>
+                        <li><a href="">NEWS</a></li>
+                        <li><a href="">PRODUCTS</a></li>
+                        <li><a href="">ABOUT US</a></li>
+                    </ul>
+                
+            </div>
+    </nav>
+    <header id="h-pic"> 
+        <div class="title">
+                <div class="title-2">
+
+                    <div class="title-1">
+                        <h1>SWEET</h1>
+                        <h6>Desserte house</h6>
+                    </div>
+                    <ul class="ind-button"> 
+                        <a href=""><li class="btn1">DISCOVER</li></a>
+                        <a href=""><li class="btn2">SHOP NOW</li></a>
+                    </ul>
+                </div>
+        </div>
+        <!-- scroll -->
+        <div id="mouse-scroll">
+            <div class="mouse">
+                <div class="mouse-in"></div>
+            </div>
+            <div>
+                <span class="down-arrow-1"></span>
+                <span class="down-arrow-2"></span>
+                <span class="down-arrow-3"></span>
+            </div>
+        </div>
+    </header>
+    <div class="dailyOffer" id="dailyOffer">
+        
+        <div class="world">
+            <h4>DAILY OFFERS</h4>
+            <ul>
+                <li>CARAMEL</li>
+                <li>MACAROONS</li>
+            </ul>
+            <div class="letter">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed tincidunt ut laoreet
+                dolore magna aliquam erat volutpat lorem</div>
+                <a href=""><li class="btn1 view">VIEW MORE</li></a>
+        </div>
+        <div class="figur">
+            <img src="./images/dailyOffer-1.jpg" alt="">
+        </div>
+
+    </div>
+    <div class="circle">
+            <div class="circle1 circle-1"  >
+                <ul data-aos="zoom-in-down" data-aos-duration="3000">
+                    <li class="title1">PRICING</li>
+                    <li class="world-1">Candy dessert dessert lemon drops sweet roll jujubes soufflé. Donut sweet sweet candy jelly.</li>
+                </ul>
+                <a href=""><li class="btn1 view">VIEW MORE</li></a>
+            </div>
+            <div class="circle1 circle-2">
+                <ul data-aos="zoom-in-down" data-aos-duration="3000"> 
+                    <li class="title1">FLAVOURS</li>
+                    <li class="world-1">I love chocolate pastry dragée dragée icing cake tart. Macaroon chocolate bar apple.</li>
+                </ul>
+                <a href=""><li class="btn1 view">VIEW MORE</li></a>
+            </div>
+            <div class="circle1 circle-3">
+                <ul data-aos="zoom-in-down" data-aos-duration="3000">
+                    <li class="title1">PROCESS</li>
+                    <li class="world-1">Pudding sweet roll I love toffee. Biscuit sugar plum tiramisu cotton candy jujubes dessert.</li>
+                </ul>
+                <a href=""><li class="btn1 view">VIEW MORE</li></a>
+            </div>
+    </div>
+    <div class="orange">
+        <div data-aos="fade-up"
+     data-aos-duration="3000"class="line">
+
+            <ul data-aos="fade-down"
+            data-aos-easing="linear"
+            data-aos-duration="1500">
+                <li class="titleO">ORANGE  PARTY</li>
+                <li class="time">2020.11.11 6:00PM</li>
+                <a href=""><li class="btn1 viewO">VIEW MORE</li></a>
+            </ul>
+        </div>
+    </div>
+    <div class="popular">
+        <ul>
+            <li class="grass"> <img src="./images/grass.png" alt=""> </li>
+            <li class="worldP">
+                <h3 data-aos="fade-up"
+                data-aos-duration="3000">OUR POPULAR ITEMT</h3>
+                <span data-aos="fade-up"
+                data-aos-duration="3000">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed tincidunt ut laoreet
+                    dolore magna aliquam erat volutpat lorem</span>
+            </li>
+            <li class="lemon"><img src="./images/lemon.png" alt=""> </li>
+        </ul>
+        <div class="card-g row">
+
+            <div data-aos="fade-up"
+            data-aos-duration="1000"class="card col-md-3 col-sm-6 col-6" style="width: 18rem;">
+                <img src="./images/pi1.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">LEMON CREAM PIE</h5>
+                  <p class="card-text">Lorem ipsum dolor sit amet, in illud possit consequuntur pri. Pro vidit iriure</p>
+                  <a href="#" class=" btn1 view">VIEW MORE</a>
+                </div>
+            </div>
+            <div data-aos="fade-up"
+            data-aos-duration="2000"class="card col-md-3 col-sm-6 col-6" style="width: 18rem;">
+                <img src="./images/pi2.svg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">MILK PANNA COTTA</h5>
+                  <p class="card-text">Lorem ipsum dolor sit amet, in illud possit consequuntur pri. Pro vidit iriure</p>
+                  <a href="#" class=" btn1 view">VIEW MORE</a>
+                </div>
+            </div>
+            <div data-aos="fade-up"
+            data-aos-duration="1000"class="card col-md-3 col-sm-6 col-6" style="width: 18rem;">
+                <img src="./images/pi3.svg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">MINT MACAROONS</h5>
+                  <p class="card-text">Lorem ipsum dolor sit amet, in illud possit consequuntur pri. Pro vidit iriure</p>
+                  <a href="#" class=" btn1 view">VIEW MORE</a>
+                </div>
+            </div>
+            <div data-aos="fade-up"
+            data-aos-duration="2000"class="card col-md-3 col-sm-6 col-6" style="width: 18rem;">
+                <img src="./images/pi4.svg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">ORANGE CREPE</h5>
+                  <p class="card-text">Lorem ipsum dolor sit amet, in illud possit consequuntur pri. Pro vidit iriure</p>
+                  <a href="#" class=" btn1 view">VIEW MORE</a>
+                </div>
+            </div>
+
+        </div>
+     
+        
+    </div>
+    <div class="square">
+        <ul class="row">
+            <li data-aos="flip-left"data-aos-duration="3000"class="col-md-4 col-6"><img src="./images/square1.svg" alt=""></li>
+            <li data-aos="flip-left"data-aos-duration="2000"class="col-md-4 col-6"><img src="./images/square2.svg" alt=""></li>
+            <li data-aos="flip-left"data-aos-duration="3000"class="col-md-4 col-6"><img src="./images/square3.svg" alt=""></li>
+            <li data-aos="flip-left"data-aos-duration="2000"class="col-md-4 col-6"><img src="./images/square4.svg" alt=""></li>
+            <li data-aos="flip-left"data-aos-duration="1000"class="col-md-4 col-6"><img src="./images/square5.svg" alt=""></li>
+            <li data-aos="flip-left"data-aos-duration="2000"class="col-md-4 col-6"><img src="./images/square6.svg" alt=""></li>
+        </ul>
+    </div>
+    <div class="visit">
+        <div data-aos="fade-down"
+        data-aos-easing="linear"
+        data-aos-duration="1500"class="visitUs">
+            <h4>VISIT US</h4>
+            <div class="word">Right in the heart of Paris. Lorem bibenm auctor, nit consequaa nibh vel velit auctor lorem qui biben ctor alique.
+            </div>
+            <a href="#" class=" btn1 view visbtn">VIEW MORE</a>
+        </div>
+        <!-- <div class="visitbg">
+            <img src="./images/visitbg.svg" alt="">
+        </div> -->
+    </div>
+
+    <!-- top -->
+    <div id="goTop" class="top" >
+        <!-- Top -->
+        <img src="./images/top.svg" alt="">
+    </div>
+    <script src="http://zeptojs.com/zepto.min.js"></script>
+    <script src="./js/vegas.min.js"></script>
+    <script type="text/javascript" src="./bootstrap/js/bootstrap.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+    <script>
+        AOS.init();
+
+            let lastPosition=0
+        $(window).scroll(function(){
+            let scrollTop=$(this).scrollTop();
+
+            if (scrollTop>lastPosition){
+                $(".webNav").addClass("hideNav")
+            }else{
+                $(".webNav").removeClass("hideNav")
+
+            }
+            if (scrollTop>lastPosition){
+                $(".phongNav").addClass("hideNav")
+            }else{
+                $(".phongNav").removeClass("hideNav")
+
+            }
+
+            
+            lastPosition=scrollTop;
+        })
+
+        $("#h-pic").vegas({
+    slides: [
+        { src: "./images/pic1.jpg" },
+        { src: "./images/pic2.jpg" }
+    ]
+});
+
+$(".menu2-1").click(function () {
+    $(this).toggleClass("active")
+})
+
+// top
+$("#goTop").click(function() {
+        $("html").animate({
+            scrollTop: 0,
+        });
+    });
+// var Top=document.getElementById("goTop");
+// $(window).scroll(function() {
+//     if($(window).scrollTop() > $(window).height() ) {
+        
+//         Top.style.display="block";
+// 		e.stopPropagation();
+
+//         }
+// });
+// $(window).scroll(function() {
+//    if($(window).scrollTop() + $(window).height() < $(document).height() - 100) {
+            
+//         Top.style.display="none";
+
+
+//    }
+// });
+var Top=document.getElementById("goTop");
+var webNav=document.getElementById("webNav");
+var phongNav=document.getElementById("phongNav");
+
+$(window).scroll(function(e) {
+    if($(window).scrollTop()< $(window).height() ) {
+        Top.style.display="none";
+        webNav.style.background="#ffffff00";
+        // phongNav.style.background="#ffffff00";
+
+
+
+        }
+    else{
+        Top.style.display="block";
+        webNav.style.background="#ffffff6e";
+        // phongNav.style.background="#ffffff6e";
+
+		e.stopPropagation();
+        }
+});
+    </script>
+</body>
+</html>
